@@ -1,0 +1,29 @@
+html{
+height:100%;
+width:100%;
+	
+}
+
+body{
+	height:100%;
+	width:100%;	
+	background: #efefef;
+	
+}
+
+#homebuttons{
+	position:relative;
+	top:40%;
+	text-align: center;
+}
+
+.homebutton{
+	margin:0 auto;	
+	min-width: 50px;	
+}
+
+buttontitle{
+	
+	white-space: nowrap;
+	display:block;
+}

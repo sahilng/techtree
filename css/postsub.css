@@ -1,0 +1,50 @@
+@font-face {
+    font-family: Roboto-Thin;
+    src: local(Roboto-Thin), url('../fonts/Roboto-Thin.ttf') format('opentype');
+}
+@font-face {
+    font-family: Roboto;
+    src: local(Roboto-Regular), url('../fonts/Roboto-Regular.ttf') format('opentype');
+}
+@font-face {
+    font-family: Roboto-Bold;
+    src: local(Roboto-Bold), url('../fonts/Roboto-Bold.ttf') format('opentype');
+}
+
+body {
+	background-color:maroon;
+	font-family: 'Roboto-Thin';
+}
+
+#container{
+   position: absolute;
+   top: 50%;
+   margin-top: -125px;
+   left: 0;
+   width: 100%;
+}
+
+#center {
+	margin-left:auto;
+	margin-right:auto;
+	width:300px;
+	height:250px;
+	background-color:white;
+	-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	-box-shadow: 0 0 10px rgba(0,0,0,.4);
+	text-align:center;
+}
+
+h1 {
+	padding:20px;
+	padding-top:22px;
+	
+}
+
+p {
+	font-size:1.2em;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:-30px;
+}

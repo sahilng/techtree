@@ -1,0 +1,208 @@
+<html>
+<head>
+	<title>Project HM - Mobile</title>
+	<style>
+		@font-face {
+    		font-family: Roboto-Thin;
+   		 	src: local(Roboto-Thin), url('fonts/Roboto-Thin.ttf') format('opentype');
+		}
+		@font-face {
+    		font-family: Roboto;
+    		src: local(Roboto-Regular), url('fonts/Roboto-Regular.ttf') format('opentype');
+		}
+		@font-face {
+    		font-family: Roboto-Bold;
+    		src: local(Roboto-Bold), url('fonts/Roboto-Bold.ttf') format('opentype');
+		}
+	
+		body {
+			background-color:maroon;
+			font-family: Roboto-Thin;
+			-webkit-touch-callout: none;
+			-webkit-user-select: none;
+			user-select: none;
+			color:maroon;
+			-webkit-tap-highlight-color: rgba(0,0,0,0);
+		}
+		a {
+			color:maroon;
+			text-decoration:none;
+		}
+		.tag {
+			width:270px;
+			height:110px;
+			background-color:white;
+			margin-left:auto;
+			margin-right:auto;
+			-moz-box-shadow: 0 0 15px rgba(0,0,0,.4);
+			-webkit-box-shadow: 0 0 15px rgba(0,0,0,.4);
+			-box-shadow: 0 0 15px rgba(0,0,0,.4);
+			text-align:center;
+			padding:none;
+			-webkit-transition: all .25s ease;
+  			-moz-transition: all .25s ease;
+  			-ms-transition: all .25s ease;
+  			-o-transition: all .25s ease;
+  			transition: all .25s ease;
+			
+		}
+		.tag:active {
+			-moz-box-shadow: 0 0 0px rgba(0,0,0,.4);
+			-webkit-box-shadow: 0 0 0px rgba(0,0,0,.4);
+			-box-shadow: 0 0 0px rgba(0,0,0,.4);
+			background-color:#E0E0E0;
+		}
+		.tag #title {
+			font-size:1.8em;
+		}
+			
+		.reveal-modal-bg { 
+			position: fixed; 
+			height: 100%;
+			width: 100%;
+			background: #000;
+			background: rgba(0,0,0,.8);
+			z-index: 100;
+			display: none;
+			top: 0;
+			left: 0; 
+		}
+	
+		.reveal-modal {
+			visibility: hidden;
+			top: 25px; 
+			left: 50%;
+			margin-left: -145px;
+			width: 210px;
+			height:381px;
+			overflow:scroll;
+			background: #eee url(modal-gloss.png) no-repeat -200px -80px;
+			position: absolute;
+			z-index: 101;
+			padding: 30px 40px 34px;
+			/*
+			-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 5px;
+			*/
+			-moz-box-shadow: 0 0 10px rgba(0,0,0,.4);
+			-webkit-box-shadow: 0 0 10px rgba(0,0,0,.4);
+			-box-shadow: 0 0 10px rgba(0,0,0,.4);
+		}
+		
+		.reveal-modal.small 		{ width: 200px; margin-left: -140px;}
+		.reveal-modal.medium 		{ width: 400px; margin-left: -240px;}
+		.reveal-modal.large 		{ width: 600px; margin-left: -340px;}
+		.reveal-modal.xlarge 		{ width: 800px; margin-left: -440px;}
+	
+		.reveal-modal .close-reveal-modal {
+			font-size: 22px;
+			line-height: .5;
+			position: absolute;
+			top: 8px;
+			right: 11px;
+			color: #aaa;
+			text-shadow: 0 -1px 1px rbga(0,0,0,.6);
+			font-weight: bold;
+			cursor: pointer;
+		} 
+		
+		.reveal-modal input[type=text], .reveal-modal input[type=email] {
+			height:30px;
+			padding:5px;
+			width:95%;
+		}
+
+		.reveal-modal textarea {
+			padding:5px;
+			width:95%;
+		}
+
+		.reveal-modal input[type=submit] {
+			font-size:1.4em;
+			padding:5px;
+			width:98%;
+		}
+
+		#spacer {
+			display:inline-block;
+			width: 10px;
+		}
+
+		#platformtd {
+			font-size:1.2em;
+		}
+		
+		input {
+			-webkit-appearance: none;
+		}
+
+	</style>
+	<script>
+		document.addEventListener("touchstart", function(){}, true);
+	</script>
+	<script src="script/jquery.min.js"></script>
+	<script src="script/jquery.reveal.js"></script>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+
+</head>
+<body><br /><br />
+	<a href="#" data-reveal-id="aboutModal"><div id="about" class="tag"><br />
+		<span id="title">About Project<br />HM</span>
+	</div></a>
+	<br /><br />
+	<a href="#" data-reveal-id="submitModal"><div id="submit" class="tag">
+		<span id="title"><br />Submit an Idea</span>
+	</div></a>
+	</br /><br />
+	<a href="#" data-reveal-id="joinModal"><div id="join" class="tag">
+		<span id="title"><br />Join the Team</span></a>
+	</div>
+	<div id="aboutModal" class="reveal-modal">
+     	<h1>About Project HM</h1>
+     	<p>Project HM is a mobile and web app incubator targeting ideas produced by members of the Horace Mann Community. We aim to find and develop innovative ideas by harnessing the entrenpreneurial exellence of Horace Mann students.</p>
+     	<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<div id="submitModal" class="reveal-modal">
+     	<h1>Submit an App Idea</h1>
+		<form  action="server/submit.php" method="POST">
+    	<input type="hidden" name="action" value="submit"/>
+			Name:<br />
+			<input type="text" name="name" /><br /><br />
+			
+			HM Email:<br />
+			<input type="email" name="email" /><br /><br />
+			
+			Platform:<br />
+			<label><input type="radio" name="platform" value="phone"/>&nbsp;Phone</label>
+				<span id="spacer"></span>
+			<label><input type="radio" name="platform" value="tablet"/>&nbsp;Tablet</label>
+				<span id="spacer"></span><br />
+			<label><input type="radio" name="platform" value="desktop"/>&nbsp;Desktop</label>
+				<span id="spacer"></span>
+			<label><input type="radio" name="platform" value="glass"/>&nbsp;Glass</label><br /><br />
+			
+			App Idea:<br />
+			<textarea name="idea" rows="4"></textarea><br /><br />
+			<input type="submit" value="Submit"/>
+		</form>
+     	<a class="close-reveal-modal">&#215;</a>
+	</div>
+	<div id="joinModal" class="reveal-modal">
+     	<h1>Join the Team</h1>
+     	<form  action="server/join.php" method="POST">
+    	<input type="hidden" name="action" value="submit"/>
+			Name:<br />
+			<input type="text" name="name" /><br /><br />
+			
+			HM Email:<br />
+			<input type="email" name="email" /><br /><br />
+			
+			Specialties/Languages:<br />
+			<textarea name="sospecial" rows="4"></textarea><br /><br />
+			<input type="submit" value="Submit"/>
+		</form>
+     	<a class="close-reveal-modal">&#215;</a>
+	</div>
+</body>
+</html>
